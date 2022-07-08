@@ -1,0 +1,21 @@
+---
+kind: pipeline
+type: kubernetes
+name: default
+
+steps:
+- name: docker
+  image: plugins/docker
+  settings:``
+    custom_dns: [ 8.8.8.8, 8.8.4.4]
+    mtu: 1000
+    username:
+      from_secret: registry_user
+    password:
+      from_secret: registry_password
+    repo: registry.pipeline.dev.vriyas.com/private/${DRONE_REPO_NAME}
+    registry: registry.pipeline.dev.vriyas.com
+    tags:
+      - latest
+    cache_from:
+      - "registry.pipeline.dev.vriyas.com/private/${DRONE_REPO_NAME}:latest"
