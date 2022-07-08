@@ -6,7 +6,7 @@ name: default
 steps:
 - name: docker
   image: plugins/docker
-  settings:``
+  settings:
     custom_dns: [ 8.8.8.8, 8.8.4.4]
     mtu: 1000
     username:
