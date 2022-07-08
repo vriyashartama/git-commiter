@@ -8,6 +8,6 @@ cat preview.yaml \
   | sed -e "s@{{.APP_ID}}@${APP_ID}@g" \
   | tee helm/templates/${APP_ID}.yml
 git add .
-git -c "user.name=Your Name" -c "user.email=Your email" commit \
+git -c "user.name=${GITHUB_USERNAME}" -c "user.email=${GITHUB_EMAIL}" commit \
   -m "Updating application for: ${REPO} with image: ${IMAGE_TAG}"
 git push origin master
