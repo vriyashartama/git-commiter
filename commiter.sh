@@ -10,4 +10,4 @@ cat preview.yaml \
 git add .
 git -c "user.name=Your Name" -c "user.email=Your email" commit \
   -m "Updating application for: ${REPO} with image: ${IMAGE_TAG}"
-# git push origin master
+git push origin master
