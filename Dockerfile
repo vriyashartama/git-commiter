@@ -5,6 +5,8 @@ RUN DEBIAN_FRONTEND=noninteractive \
     apt-get install --no-install-recommends -y \
     git ca-certificates
 
-COPY . .
+ADD commiter.sh .
 
-ENTRYPOINT ["./commiter.sh"]
+RUN chmod 755 commiter.sh
+
+CMD ["./commiter.sh"]
