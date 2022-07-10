@@ -11,4 +11,4 @@ ADD commiter.sh .
 
 RUN chmod 755 commiter.sh
 
-RUN ./commiter.sh
+CMD ["./commiter.sh"]
